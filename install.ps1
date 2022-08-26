@@ -1,6 +1,25 @@
 #Requires -RunAsAdministrator
 #Requires -Version 6
 
+<#
+    Source: https://github.com/lextm/windowsterminal-shell
+    
+    Execute the following commands before running this script:
+        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+    
+    Registries modified:
+       HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\ContextMenus\MenuTerminal\shell\$guid
+       HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\ContextMenus\MenuTerminalAdmin\shell\$guid
+       
+       HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\MenuTerminal_$guid
+       HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\MenuTerminalAdmin_$guid
+       
+       HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\MenuTerminal[Mini]\...
+       HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\MenuTerminal[Mini]\...
+       HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\MenuTerminalAdmin[Mini]\...
+       HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\MenuTerminalAdmin[Mini]\...
+#>
+
 [CmdletBinding()]
 param(
     [Parameter(Position = 0)]
